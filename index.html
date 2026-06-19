@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 资料索引与内容概要</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f0eb; /* 米白基调 */
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2b2825;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #fdfcfa;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.8rem 3.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.8rem 1.2rem 2.2rem;
+            }
+            body {
+                padding: 0.8rem 0.4rem;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.3rem;
+            color: #1f1c18;
+            border-left: 5px solid #b8a898;
+            padding-left: 1.2rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6e6258;
+            margin-bottom: 2.2rem;
+            padding-left: 1.8rem;
+            border-bottom: 1px dashed #dad2ca;
+            padding-bottom: 0.7rem;
+        }
+
+        .info-summary {
+            background: #ede7e0;
+            padding: 1.6rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0 2.5rem 0;
+            font-size: 1rem;
+            color: #2f2a23;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        .info-summary::before {
+            content: "📋 资料摘要";
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            color: #5c4f43;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .info-summary p {
+            margin: 0.5rem 0;
+        }
+
+        .grid-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem 2rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid-highlights {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+        }
+
+        .highlight-item {
+            background: #f8f3ee;
+            padding: 1.2rem 1.4rem;
+            border-radius: 12px;
+            border: 1px solid #e3dbd3;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #3d322b;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #4f453c;
+        }
+
+        .scenario-block {
+            background: #ffffff;
+            border: 1px solid #e3d9cf;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2.8rem 0 2.2rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .scenario-block h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #2b221c;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e1d6cc;
+            padding-bottom: 0.3rem;
+        }
+
+        .scenario-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scenario-block li {
+            margin-bottom: 0.9rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #3e372f;
+        }
+
+        .scenario-block li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #9a897b;
+            font-size: 1.2rem;
+        }
+
+        .callout-note {
+            background: #f2ece4;
+            border-left: 6px solid #b7a290;
+            padding: 1.2rem 1.8rem;
+            margin: 2.6rem 0 2rem;
+            border-radius: 10px;
+            font-size: 0.98rem;
+            color: #2f2822;
+        }
+
+        .callout-note strong {
+            color: #3b2c1f;
+            font-weight: 600;
+        }
+
+        .faq-mini {
+            margin: 2.8rem 0 1.8rem;
+            border-top: 1px dashed #d5cbc1;
+            padding-top: 2rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1f1914;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #3b3229;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #535049;
+            padding-left: 1.2rem;
+            border-left: 3px solid #d6cbbf;
+        }
+
+        .link-embed {
+            display: inline;
+            background: transparent;
+            padding: 0;
+        }
+
+        .inline-link {
+            color: #7f3f1d;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #4f2a14;
+            text-decoration-thickness: 2px;
+        }
+
+        .footnote {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #8a7d70;
+            text-align: center;
+            border-top: 1px solid #e2d7ce;
+            padding-top: 1.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footnote a {
+            color: #7f542f;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e7ddd3;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>乐鱼体育 · 资料索引</h1>
+    <div class="subhead">面向信息归类与内容查阅的简明概要</div>
+
+    <!-- 摘要区 (引述风格) -->
+    <div class="info-summary">
+        <p>从资料整理角度看，<a href="https://site-official-leyu.com.cn" class="inline-link">乐鱼体育</a> 是一处聚合体育资讯、赛事数据与内容索引的线上节点。页面结构偏向模块化信息陈列，涵盖多项运动类目及辅助功能引导。本页基于公开内容提取主要特征，便于快速了解其框架与用途。</p>
+        <p>本文档不构成推荐、担保或操作建议，仅作信息结构描述。具体功能以实际页面为准。</p>
+    </div>
+
+    <!-- 亮点卡片 (网格) -->
+    <div class="grid-highlights">
+        <div class="highlight-item">
+            <h3>内容分类逻辑</h3>
+            <p>按运动项目（足球、篮球、网球等）与赛事类型划分，配合时间轴与热度标签，信息层次较清晰。归类方式适合快速定位感兴趣领域。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>数据索引特征</h3>
+            <p>页面嵌入实时数据更新模块，涵盖赛程、比分、统计等结构化信息。数据源接口稳定度与更新频次可参考站内说明。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>界面与导航</h3>
+            <p>采用侧栏 + 顶栏双层导航，入口集中。字体对比度与卡片间距经过适配，移动端响应较好，阅读连贯性中等偏上。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>信息可信度提示</h3>
+            <p>所有数据、链接及内容均应以官方或原始来源为准。建议用户在使用信息前交叉核查，尤其涉及赛事结果与统计时。</p>
+        </div>
+    </div>
+
+    <!-- 使用场景与建议（引用框风格） -->
+    <div class="scenario-block">
+        <h2>适用场景与使用建议</h2>
+        <ul>
+            <li><strong>赛事跟进与资料查阅：</strong>适合希望一站式浏览多个联赛赛程、比分摘要的用户。可结合<a href="https://site-official-leyu.com.cn" class="inline-link">乐鱼体育</a>的导航栏快速切换项目。</li>
+            <li><strong>内容索引与对比：</strong>若需横向对比不同体育项目的当日赛况，其聚合视图能减少反复跳转的成本。建议配合官方数据源二次确认。</li>
+            <li><strong>资讯整理与归档：</strong>对于研究者或内容运营者，页面的分类标签与时间线可作为初级素材索引，但深度分析仍需要专业数据库。</li>
+            <li><strong>克制使用提示：</strong>任何线上信息平台均存在延迟或偏差，尤其涉及实时比分、赔率或深度统计时。请保持理性判断，勿过度依赖单一信息源。</li>
+        </ul>
+    </div>
+
+    <!-- 提示框（补充说明） -->
+    <div class="callout-note">
+        <strong>📌 资料说明：</strong> 本介绍页基于 <a href="https://site-official-leyu.com.cn" class="inline-link">乐鱼体育</a> 的公开结构整理。所有分类、数据模块及导航逻辑均为观察性描述，不暗示其准确性、完整性或时效性。用户应自行评估信息适用性。
+    </div>
+
+    <!-- FAQ 摘要（微型） -->
+    <div class="faq-mini">
+        <h3>常见疑问摘要</h3>
+        <div class="faq-item">
+            <div class="q">问：该网站主要提供哪类信息？</div>
+            <div class="a">答：以体育赛事资讯、赛程数据、分类索引为主，涵盖足球、篮球、网球等多个项目，页面布局偏重信息陈列。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">问：数据更新频率如何？</div>
+            <div class="a">答：根据页面模块标注，实时比分与赛程数据会动态刷新；具体更新策略建议参考站点文档或实际表现。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">问：使用前需要注意什么？</div>
+            <div class="a">答：建议将本平台作为索引渠道之一，关键决策请务必核对原始来源。对于任何赛事预测、统计解读请保持审慎。</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footnote">
+        本文档为资料整理性质 · 内容基于公开页面结构描述 · 不构成任何形式指引或保证<br>
+        如需直接访问可至 <a href="https://site-official-leyu.com.cn" style="color: #7f4f2b; text-decoration: underline;">乐鱼体育</a>
+    </div>
+
+</div>
+</body>
+</html>

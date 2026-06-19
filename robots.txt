@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cedicin.github.io/site-official-leyu-com-cn-4/sitemap.xml
